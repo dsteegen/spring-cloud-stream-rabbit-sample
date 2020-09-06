@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: Message-exchange
+          content-type: application/json
+          group: Message-queue
+          producer:
+            deliveryMode: persistent
+          binder: message-binder
+      binders:
+        message-binder:
+          type: rabbit
+          default-candidate: false
+      rabbit:
+        bindings:
+          output:
+            producer:
+              queue-name-group-only: true
+              declare-exchange: true
+              bind-queue: true
