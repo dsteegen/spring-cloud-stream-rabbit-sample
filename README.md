@@ -1,6 +1,14 @@
 # spring-cloud-stream-rabbit-sample
 This repository contains a sample on how to use Spring Cloud Stream with RabbitMQ.
 
+# Version info
+The samples are running on Java 11 and are using the following frameworks:
+
+* Spring Cloud Hoxton.SR8
+* Spring Boot 2.3.3
+* Spring Cloud Stream 3.0.8
+
+# How To
 To try out the samples, first spin up a RabbitMQ by executing the following docker command:
 
 `docker run -p 15672:15672 -p 5672:5672 rabbitmq:3-management`
