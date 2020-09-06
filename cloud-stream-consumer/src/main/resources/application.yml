@@ -4,6 +4,9 @@ server:
 spring:
   cloud:
     stream:
+      function:
+        bindings:
+          messageInput-in-0: input
       bindings:
         input:
           destination: Message-exchange

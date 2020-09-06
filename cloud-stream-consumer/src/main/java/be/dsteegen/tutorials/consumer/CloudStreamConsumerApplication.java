@@ -4,16 +4,12 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Sink;
-import org.springframework.messaging.Message;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Bean;
 
 import java.time.Instant;
+import java.util.function.Consumer;
 
 @SpringBootApplication
-@EnableBinding(Sink.class)
 @Slf4j
 public class CloudStreamConsumerApplication {
 
@@ -21,14 +17,9 @@ public class CloudStreamConsumerApplication {
 		SpringApplication.run(CloudStreamConsumerApplication.class, args);
 	}
 
-	@Component
-	static class MessageListener {
-
-		@StreamListener(Sink.INPUT)
-		void process(Message<Payload> message) {
-			log.info("Received message {}", message.getPayload());
-		}
-
+	@Bean
+	Consumer<Payload> messageInput() {
+		return payload -> log.info("Received message {}", payload);
 	}
 
 	@Data

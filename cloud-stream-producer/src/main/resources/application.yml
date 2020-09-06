@@ -1,6 +1,9 @@
 spring:
   cloud:
     stream:
+      function:
+        bindings:
+          messageOutput-out-0: output
       bindings:
         output:
           destination: Message-exchange
