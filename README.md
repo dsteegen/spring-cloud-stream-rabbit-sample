@@ -12,9 +12,9 @@ Default credentials are `guest/guest`.
 
 Next start both the `CloudStreamProducerApplication` and the `CloudStreamConsumerApplication`.
 
-The producer application has a `/post` endpoint that takes a String as parameter. This parameter will be send as a `Payload` object to RabbitMQ.
-Try it out by invoking a POST on `localhost:8080/post/test`. 
-The server should respond with HTTP 200. Now when checking the logs of the consumer application, you should something similar to 
+The producer application has a `/post` endpoint that takes a String as parameter. This parameter will be sent as a `Payload` object to RabbitMQ.
+Try it out by invoking a POST on `localhost:8080/post/test`. You can use Postman, curl or use the included `post-message.http` that can be ran via Intellij. 
+The server should respond with HTTP 200. Now when checking the logs of the consumer application, you should something similar to:
 
 ```
 2020-09-06 16:52:17.289  INFO 16452 --- [Message-queue-1] b.d.t.c.CloudStreamConsumerApplication   : Received message CloudStreamConsumerApplication.Payload(message=test, time=2020-09-06T14:52:17.283380400Z)
