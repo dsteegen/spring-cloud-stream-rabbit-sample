@@ -7,7 +7,7 @@ To try out the samples, first spin up a RabbitMQ by executing the following dock
 
 This will start RabbitMQ with the management interface and it will expose ports `5672` (RabbitMQ port) and `15672` (management port).
 
-To verify that all is working, open a browser and navigate to [localhost:15672](https://localhost:15672). It should display the login page of the management interface.
+To verify that all is working, open a browser and navigate to [localhost:15672](http://localhost:15672). It should display the login page of the management interface.
 Default credentials are `guest/guest`.
 
 Next start both the `CloudStreamProducerApplication` and the `CloudStreamConsumerApplication`.
