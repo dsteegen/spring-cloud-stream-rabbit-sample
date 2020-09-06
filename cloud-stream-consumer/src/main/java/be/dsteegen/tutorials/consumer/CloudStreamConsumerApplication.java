@@ -19,7 +19,12 @@ public class CloudStreamConsumerApplication {
 
 	@Bean
 	Consumer<Payload> messageInput() {
-		return payload -> log.info("Received message {}", payload);
+		return payload -> {
+			if (payload.message.equalsIgnoreCase("error")) {
+				throw new RuntimeException("System failure!");
+			}
+			log.info("Received message {}", payload);
+		};
 	}
 
 	@Data

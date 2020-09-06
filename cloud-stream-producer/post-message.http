@@ -1,1 +1,7 @@
+# Send a message that will be accepted
 POST http://localhost:8080/post/test
+
+###
+
+# Send a message that will result in error
+POST http://localhost:8080/post/error
